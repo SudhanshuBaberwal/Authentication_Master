@@ -57,7 +57,7 @@ const Home = () => {
       {/* ================= HERO ================= */}
       <section className="max-w-6xl mx-auto px-6 pt-28 text-center">
         <h2 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Welcome back,{" "}
+          Welcome back {" "}
           <span className="text-purple-400">
             {user?.name || "User"}
           </span>
