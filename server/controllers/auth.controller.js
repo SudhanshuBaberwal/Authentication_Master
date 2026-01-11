@@ -1,4 +1,4 @@
-import generateVerificationToken from "../utils/util.js";
+ import generateVerificationToken from "../utils/util.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import crypto from "crypto";
@@ -126,6 +126,7 @@ export const forgotPassword = async (req, res) => {
     // Generate Reset Token
     // const bytes = randomBytes(16);
     const resetPasswordExpiresAt = Date.now + 1 * 60 * 60 * 1000;
+    const resetToken = crypto.randomBytes(16).toString("hex");
 
     user.resetPasswordToken = resetToken;
     user.resetPasswordExpiresAt = resetPasswordExpiresAt;
